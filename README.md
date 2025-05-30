@@ -32,7 +32,10 @@ Antes de comenzar a trabajar con los datos y las diferentes herramientas a utili
 
 <p align="center">
   <img src="img/Permisos perfil.png" alt="Permisos perfil" width="800"/>
+  <h6><i>Permisos agregados al perfil de usuario<i></h6>
 </p>
+
+
 
 ### Almacenamiento de los datos
 
@@ -158,9 +161,6 @@ Nota: Looker Studio solicita que se adquiera una licencia de uso para el usuario
 
 <p align="center">
   <img src="img/Menu Looker Studio.png" alt="Menu Looker Studio" width="800"/>
-</p>
-
-<p align="center">
   <img src="img/Looker add data.png" alt="Looker add data" width="800"/>
 </p>
 
