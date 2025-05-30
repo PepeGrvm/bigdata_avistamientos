@@ -35,8 +35,6 @@ Antes de comenzar a trabajar con los datos y las diferentes herramientas a utili
   <h6 align="center"><i>Permisos agregados al perfil de usuario<i></h6>
 </p>
 
-
-
 ### Almacenamiento de los datos
 
 Se accede a Cloud Storage, una vez ahí se selecciona la opción Create Bucket, se ingresa un nombre valido para el bucket (GCP notifica al usuario si el nombre del bucket ya está en uso por otro usuario), se presiona en create y se crea el bucket. 
@@ -50,7 +48,9 @@ Nota: El archivo original se encuentra en formato xlmx, GCP no acepta este forma
 
 <p align="center">
   <img src="img/csv subido.png" alt="csv subido" width="800"/>
+  <h6 align="center"><i>Bucket con csv cargado<i></h6>
 </p>
+
 Una vez que se ha subido el archivo, se ingresa a BigQuery, en este se puede ver el id del proyecto, en los tres puntos al lado de este se selecciona la opción Create dataset, se ingresa el nombre del dataset (en este caso se nombró ovni) y se presiona en Create dataset.
 
 <p align="center">
@@ -63,36 +63,41 @@ Antes de proceder con el trabajo con los datos, se requiere prepararlos para ser
 Una vez que ya se ha ingresado a dataprep, se presiona en Import data from Cloud Storage into BigQuery, se selecciona el archivo con los datos y se presiona en Import & Add to Flow.
 
 <p align="center">
-  <img src="img/Dataprep.png" alt="Dataprep" width="800"/>
+  <img src="img/Inicio Dataprep.png" alt="Dataprep" width="800"/>
 </p>
 
 <p align="center">
   <img src="img/Dataprep cloud storage.png" alt="Dataprep cloud storage" width="800"/>
+  <h6 align="center"><i>Archivo csv importado a Dataprep<i></h6>
 </p>
 
 Una vez que los datos se seleccionaron e importaron, se muestran por medio de una tabla que señala la presencia de datos nulos o que no encajan con el resto de los datos (formato).
 
 <p align="center">
   <img src="img/Dataprep dataview.png" alt="Dataprep dataview" width="800"/>
+  <h6 align="center"><i>Datos sin tratar<i></h6>
 </p>
 
-Para tratar lso datos nulos y los datos que no encajan (mismatch), se realizaron los siguientes pasos:
+Para tratar los datos nulos y los datos que no encajan (mismatch), se realizaron los siguientes pasos:
 * En la columna state/province, se presiona en la linea roja sobre los datos (esto señala la presencia de datos mismatch) y en las opciones sugeridas, se selecciona eliminar filas mismatched
 * Se reemplazan los missing values de la tabla por el último valor valido de la columna
 * Se modifica el nombre de state/province por state_province (esto para evitar que se genere error al exportar la tabla a BigQuery)
 
 <p align="center">
   <img src="img/Dataprep datos tratados.png" alt="Dataprep datos tratados" width="800"/>
+  <h6 align="center"><i>Datos tratados<i></h6>
 </p>
 
 Una vez que ya se realizaron los cambios, se realizan las transformaciones presionan en Run Job. Una vez que se completa las transformaciones, se realiza la creación de una tabla en BigQuery (llamada avistamientos) y se publican los nuevos datos a esta nueva tabla.
 
 <p align="center">
   <img src="img/Dataprep flow 3.png" alt="Dataprep flow 3" width="800"/>
+  <h6 align="center"><i>Flujo de trabajo Dataprep<i></h6>
 </p>
 
 <p align="center">
   <img src="img/Dataprep publish.png" alt="Dataprep publish" width="800"/>
+  <h6 align="center"><i>Datos tratados publicados en BigQuery<i></h6>
 </p>
 
 ### Consultas BigQuery
@@ -116,6 +121,7 @@ LIMIT 5;
 
 <p align="center">
   <img src="img/BigQuery Query 1.png" alt="BigQuery Query 1" width="800"/>
+  <h6 align="center"><i>Resultados primera consulta<i></h6>
 </p>
 
 ```
@@ -134,6 +140,7 @@ ORDER BY
 
 <p align="center">
   <img src="img/BigQuery Query 2.png" alt="BigQuery Query 2" width="800"/>
+  <h6 align="center"><i>Resultados segunda consulta<i></h6>
 </p>
 
 ```
@@ -152,6 +159,7 @@ ORDER BY
 
 <p align="center">
   <img src="img/BigQuery Query 3.png" alt="BigQuery Query 3" width="800"/>
+  <h6 align="center"><i>Resultados tercera consulta<i></h6>
 </p>
 
 ### Looker Studio
@@ -161,7 +169,11 @@ Nota: Looker Studio solicita que se adquiera una licencia de uso para el usuario
 
 <p align="center">
   <img src="img/Menu Looker Studio.png" alt="Menu Looker Studio" width="800"/>
+</p>
+
+<p align="center">
   <img src="img/Looker add data.png" alt="Looker add data" width="800"/>
+  <h6 align="center"><i>Carga de los datos desde BigQuery<i></h6>
 </p>
 
 Una vez ya abierto el reporte, se generan los siguientes gráficos:
