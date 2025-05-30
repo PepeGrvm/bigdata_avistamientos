@@ -32,7 +32,7 @@ Antes de comenzar a trabajar con los datos y las diferentes herramientas a utili
 
 <p align="center">
   <img src="img/Permisos perfil.png" alt="Permisos perfil" width="800"/>
-  <h6><i>Permisos agregados al perfil de usuario<i></h6>
+  <h6 align="center"><i>Permisos agregados al perfil de usuario<i></h6>
 </p>
 
 
